@@ -44,7 +44,7 @@ h1 {
 }
 
 .game-container .row .letter.error {
-  background-color: red;
+  background-color: #540303;
 }
 
 .game-container .row .letter.correct {
@@ -52,5 +52,5 @@ h1 {
 }
 
 .game-container .row .letter.incorrect {
-  background-color: blue;
+  background-color: #070792;
 }
