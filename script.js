@@ -99,7 +99,6 @@ const rowElementsArray = [
 // Words Array
 const words = wordList;
 const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
-console.log(word);
 
 let rowOneArray = [];
 let rowTwoArray = [];
