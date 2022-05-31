@@ -3,7 +3,9 @@ import { rowElementsArray, informationContainer } from './Elements/elements.js';
 
 // Words Array
 const words = wordList;
-const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
+// const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
+const word = "THOSE"
+console.log(word);
 
 let rowOneArray = [];
 let rowTwoArray = [];
@@ -90,6 +92,14 @@ function checkRowInput(row) {
     wordCorrect = 'invalid';
     clearInput(row);
   } else {
+
+    for (let i = 0; i < 5; i++) {
+      if (selectedRow[i] === wordArray[i]) {
+        selectedRowElements[i].classList.add('correct');
+        // wordArray.splice(i, 1, '');
+      }
+    }
+
     for (let i = 0; i < 5; i++) {
       if (
         selectedRow[i] !== wordArray[i] &&
@@ -104,6 +114,7 @@ function checkRowInput(row) {
         wordCorrect = false;
       }
     }
+
     for (let i = 0; i < 5; i++) {
       if (
         selectedRow[i] !== wordArray[i] &&
@@ -113,16 +124,9 @@ function checkRowInput(row) {
         wordCorrect = false;
       }
     }
-    for (let i = 0; i < 5; i++) {
-      if (selectedRow[i] === wordArray[i]) {
-        selectedRowElements[i].classList.add('correct');
-        wordArray.splice(i, 1, '');
-      }
-    }
   }
 
   if (!wordCorrect) {
-    console.log('booo');
     changeActiveRow();
   } else if (wordCorrect === 'invalid') {
     return;
@@ -139,8 +143,7 @@ function gameWon() {
 
 // Game Lost Function
 function gameLost() {
-  informationContainer.innerHTML =
-    `<h2>Booooo! You have lost! The correct word was ${word}</h2>`;
+  informationContainer.innerHTML = `<h2>Booooo! You have lost! The correct word was ${word}</h2>`;
 }
 
 // Event Listeners
