@@ -3,7 +3,18 @@ import { rowElementsArray, informationContainer } from './Elements/elements.js';
 
 // Words Array
 const words = wordList;
-const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
+// const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
+const word = "TRUTH"
+
+const wordMap = [...word].reduce((accum, x) => {
+  accum[x] = accum[x] ? accum[x] + 1 : 1;
+  return accum
+}, {})
+
+console.log(wordMap)
+
+
+console.log(word)
 
 let rowOneArray = [];
 let rowTwoArray = [];
@@ -94,7 +105,7 @@ function checkRowInput(row) {
     for (let i = 0; i < 5; i++) {
       if (selectedRow[i] === wordArray[i]) {
         selectedRowElements[i].classList.add('correct');
-        // wordArray.splice(i, 1, '');
+        wordArray.splice(i,1,"")
       }
     }
 
@@ -157,3 +168,24 @@ window.addEventListener('keydown', (e) => {
     return;
   }
 });
+
+function test(row) {
+  const wordArray = [...word];
+  const selectedRow = rowArray[row];
+  const selectedRowElements = rowElementsArray[row];
+  let wordInput = selectedRow.join('');
+  let wordCorrect = true;
+
+  if (selectedRow.length < 5) {
+    alert('Please enter 5 Words');
+    wordCorrect = 'invalid';
+    clearInput(row);
+  } else if (!words.includes(wordInput.toLowerCase())) {
+    alert('Please enter a valid word');
+    wordCorrect = 'invalid';
+    clearInput(row);
+  } else {
+
+  }
+
+}
