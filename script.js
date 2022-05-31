@@ -3,18 +3,7 @@ import { rowElementsArray, informationContainer } from './Elements/elements.js';
 
 // Words Array
 const words = wordList;
-// const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
-const word = "TRUTH"
-
-const wordMap = [...word].reduce((accum, x) => {
-  accum[x] = accum[x] ? accum[x] + 1 : 1;
-  return accum
-}, {})
-
-console.log(wordMap)
-
-
-console.log(word)
+const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
 
 let rowOneArray = [];
 let rowTwoArray = [];
