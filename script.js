@@ -3,9 +3,7 @@ import { rowElementsArray, informationContainer } from './Elements/elements.js';
 
 // Words Array
 const words = wordList;
-// const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
-const word = "THOSE"
-console.log(word);
+const word = words[Math.floor(Math.random() * wordList.length)].toUpperCase();
 
 let rowOneArray = [];
 let rowTwoArray = [];
