@@ -5,7 +5,6 @@ https://www-cs-faculty.stanford.edu/~knuth/sgb-words.txt
 */
 
 const wordList = [
-  'stxxe',
   'which',
   'there',
   'their',
