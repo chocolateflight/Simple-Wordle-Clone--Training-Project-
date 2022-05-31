@@ -154,6 +154,6 @@ window.addEventListener('keydown', (e) => {
   } else if (e.keyCode === 13) {
     checkRowInput(activeRow);
   } else {
-    alert('Please enter a valid letter');
+    return;
   }
 });
