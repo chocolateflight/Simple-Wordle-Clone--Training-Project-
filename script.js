@@ -140,7 +140,7 @@ function gameWon() {
 // Game Lost Function
 function gameLost() {
   informationContainer.innerHTML =
-    '<h2>Booooo! You have lost!</h2>';
+    `<h2>Booooo! You have lost! The correct word was ${word}</h2>`;
 }
 
 // Event Listeners
